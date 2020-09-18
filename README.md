@@ -52,7 +52,7 @@ Pentru a vedea progresiv cum a fost realizat acest proiect urmariti urmatoarele 
 * Cursul 10: https://github.com/razvancir96/react-curs10
 
 
-## Cetinte
+## Cerinte
 
 Pentru a continua proiectul, avem urmatoarele cerinte:
 
