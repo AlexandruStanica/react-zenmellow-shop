@@ -1,11 +1,12 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCcbZMkwd4ZV_1DiH0R3TZFCg9GKaIMeoM",
-    authDomain: "react-sirluggia-shop.firebaseapp.com",
-    databaseURL: "https://react-sirluggia-shop.firebaseio.com",
-    projectId: "react-sirluggia-shop",
-    storageBucket: "react-sirluggia-shop.appspot.com",
-    messagingSenderId: "184253035461",
-    appId: "1:184253035461:web:20fe5c173c7675c74c51ac"
+    apiKey: "AIzaSyAM2M25IIPNkSufSje1D4LQFFAkRzEHGPU",
+    authDomain: "zenmellow-alex.firebaseapp.com",
+    databaseURL: "https://zenmellow-alex.firebaseio.com",
+    projectId: "zenmellow-alex",
+    storageBucket: "zenmellow-alex.appspot.com",
+    messagingSenderId: "189768374537",
+    appId: "1:189768374537:web:39220448da13693ac55bd8",
+    measurementId: "G-CQP50TB27Y"
 };
 
 export default firebaseConfig;

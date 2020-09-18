@@ -1,11 +1,13 @@
-import React from 'react';
-import Layout from '../components/Layout';
+import React from "react";
+import Layout from "../components/Layout";
 
 function About() {
-    return(
+    return (
         <div>
             <Layout>
-                <h1>About</h1>
+                <div>
+                    <h1>About</h1>
+                </div>
             </Layout>
         </div>
     );
