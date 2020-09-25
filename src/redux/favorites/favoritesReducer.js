@@ -1,8 +1,7 @@
 import { actionTypes } from "./favoritesConstants";
 
 const initialState = {
-    products: [],
-    empty: true
+    products: []
 };
 
 export function favoritesReducer(state = initialState, action) {
@@ -10,8 +9,7 @@ export function favoritesReducer(state = initialState, action) {
         case actionTypes.ADD_TO_FAVORITES:
             return {
                 ...state,
-                products: [...state.products, action.payload.product],
-                empty: false
+                products: [...state.products, action.payload.product]
             };
         case actionTypes.REMOVE_FROM_FAVORITES:
             const filteredProducts = state.products.filter(product => {
@@ -20,8 +18,7 @@ export function favoritesReducer(state = initialState, action) {
 
             return {
                 ...state,
-                products: filteredProducts,
-                empty: true
+                products: filteredProducts
             };
         default:
             return state;

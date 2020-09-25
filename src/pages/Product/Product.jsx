@@ -34,7 +34,11 @@ class Product extends React.Component {
 
     render() {
         const { product } = this.state;
-        const { empty } = this.props;
+        const { favoriteProducts } = this.props;
+
+        const found = favoriteProducts.find(
+            favoriteProduct => favoriteProduct.id === product.id
+        );
 
         return (
             <Layout>
@@ -48,7 +52,7 @@ class Product extends React.Component {
                             />
                         </div>
                         <div className="product-details">
-                            {empty ? (
+                            {!found ? (
                                 <EmptyHeart
                                     className="heart empty-heart"
                                     onClick={() =>
@@ -116,7 +120,7 @@ class Product extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        empty: state.favorites.empty
+        favoriteProducts: state.favorites.products
     };
 }
 
