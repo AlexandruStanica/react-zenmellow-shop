@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Layout from '../components/Layout';
-import products from '../utils/products.json';
-import ProductList from '../components/ProductList';
+import React, { Component } from "react";
+import Layout from "../components/Layout/Layout";
+import products from "../utils/products.json";
+import ProductList from "../components/ProductList";
 
 class Category extends Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class Category extends Component {
         this.state = {
             category: {},
             items: []
-        }
+        };
     }
 
     componentDidMount() {
@@ -25,7 +25,7 @@ class Category extends Component {
         return (
             <Layout>
                 <div className="container-fluid container-min-max-width">
-                    <h2>{ this.state.category.name }</h2>
+                    <h2>{this.state.category.name}</h2>
                     <ProductList products={this.state.items} />
                 </div>
             </Layout>

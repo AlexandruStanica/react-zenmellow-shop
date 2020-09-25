@@ -1,9 +1,15 @@
 import React from "react";
-import Layout from "../components/Layout";
-import products from "../utils/products.json";
+import Layout from "../../components/Layout/Layout";
+import products from "../../utils/products.json";
 import "./Product.css";
 import { connect } from "react-redux";
-import { addToCart } from "../redux/actions/cart";
+import { addToCart } from "../../redux/cart/cartActions";
+import {
+    addToFavorites,
+    removeFromFavorites
+} from "../../redux/favorites/favoritesActions";
+import { ReactComponent as EmptyHeart } from "../../assets/icons/heart-outlined.svg";
+import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 
 class Product extends React.Component {
     constructor(props) {
@@ -28,6 +34,7 @@ class Product extends React.Component {
 
     render() {
         const { product } = this.state;
+        const { empty } = this.props;
 
         return (
             <Layout>
@@ -41,6 +48,31 @@ class Product extends React.Component {
                             />
                         </div>
                         <div className="product-details">
+                            {empty ? (
+                                <EmptyHeart
+                                    className="heart empty-heart"
+                                    onClick={() =>
+                                        this.props.addToFavorites({
+                                            product: {
+                                                id: product.id,
+                                                name: product.name,
+                                                price: product.price,
+                                                currency: product.currency,
+                                                image: product.image
+                                            }
+                                        })
+                                    }
+                                />
+                            ) : (
+                                <Heart
+                                    className="heart full-heart"
+                                    onClick={() =>
+                                        this.props.removeFromFavorites({
+                                            id: product.id
+                                        })
+                                    }
+                                />
+                            )}
                             <p className="h3 text-danger">
                                 {product.price} {product.currency}
                             </p>
@@ -60,12 +92,14 @@ class Product extends React.Component {
                             >
                                 Adaugă în coș
                             </button>
-                            <p>
-                                <span className="font-weight-bold">
-                                    Culoare
-                                </span>
-                                : {product.colour}
-                            </p>
+                            {product.colour ? (
+                                <p>
+                                    <span className="font-weight-bold">
+                                        Culoare
+                                    </span>
+                                    : {product.colour}
+                                </p>
+                            ) : null}
                             <p>
                                 <span className="font-weight-bold">Brand</span>:{" "}
                                 {product.brand}
@@ -80,10 +114,18 @@ class Product extends React.Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapStateToProps(state) {
     return {
-        addToCart: payload => dispatch(addToCart(payload))
+        empty: state.favorites.empty
     };
 }
 
-export default connect(null, mapDispatchToProps)(Product);
+function mapDispatchToProps(dispatch) {
+    return {
+        addToCart: payload => dispatch(addToCart(payload)),
+        addToFavorites: payload => dispatch(addToFavorites(payload)),
+        removeFromFavorites: payload => dispatch(removeFromFavorites(payload))
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

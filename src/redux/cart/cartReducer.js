@@ -1,10 +1,12 @@
+import { actionTypes } from "./cartConstants";
+
 const initialState = {
     products: []
-}
+};
 
 export function cartReducer(state = initialState, action) {
     switch (action.type) {
-        case 'ADD_TO_CART':
+        case actionTypes.ADD_TO_CART:
             let productInCart = false;
             const updatedProducts = state.products.map(product => {
                 if (product.id === action.payload.product.id) {
@@ -12,11 +14,11 @@ export function cartReducer(state = initialState, action) {
                     return {
                         ...product,
                         quantity: product.quantity + 1
-                    }
+                    };
                 } else {
                     return product;
                 }
-            })
+            });
 
             if (!productInCart) {
                 return Object.assign({}, state, {
@@ -27,15 +29,15 @@ export function cartReducer(state = initialState, action) {
                             quantity: 1
                         }
                     ]
-                })
+                });
             } else {
                 return Object.assign({}, state, {
                     products: updatedProducts
                 });
             }
-        case 'REMOVE_FROM_CART':
+        case actionTypes.REMOVE_FROM_CART:
             const filteredProducts = state.products.filter(product => {
-                return product.id !== action.payload.id
+                return product.id !== action.payload.id;
             });
 
             return Object.assign({}, state, {
@@ -45,4 +47,3 @@ export function cartReducer(state = initialState, action) {
             return state;
     }
 }
-

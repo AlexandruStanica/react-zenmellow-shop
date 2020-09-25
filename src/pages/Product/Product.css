@@ -10,6 +10,12 @@
 
 .product-page .image-wrapper img {
     height: 100%;
+    width: 400px;
+    object-fit: contain;
+}
+
+.heart {
+    margin-left: 200px;
 }
 
 /* Stilizarea pe mobile */
@@ -32,5 +38,6 @@
 
     .product-page .product-details {
         margin-top: 1.5rem;
+        text-align: center;
     }
 }

@@ -9,9 +9,15 @@ de maxim 768px. */
 @media (max-width: 768px) {
     footer > div {
         flex-direction: column;
+        align-items: center;
     }
 
-    footer .footer-group{
+    footer .footer-group {
         margin-bottom: 1.5rem;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+        text-align: center;
     }
 }
