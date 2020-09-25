@@ -9,10 +9,10 @@ function About() {
             <div className="container">
                 <h1 className="mb-5">Despre mine</h1>
                 <div className="row">
-                    <div className="profile-img col-6">
+                    <div className="profile-img col-12 col-md-6 mb-5">
                         <img src={Profile} alt="Imagine de profil" />
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                         <h3 className="mb-3">
                             Salut! Îți mulțumesc că mi-ai vizitat site-ul.
                         </h3>
