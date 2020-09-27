@@ -22,7 +22,7 @@ class Login extends React.Component {
                 </Link>
 
                 <h1 className="h2">Login</h1>
-                <p>Alege providerul cu care vrei să vrei să te loghezi:</p>
+                <p>Alege providerul cu care vrei să te loghezi:</p>
 
                 <button
                     className="btn btn-outline-dark d-flex align-items-center mb-3"
