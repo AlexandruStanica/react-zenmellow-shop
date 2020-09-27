@@ -28,7 +28,7 @@ class Login extends React.Component {
                     className="btn btn-outline-dark d-flex align-items-center mb-3"
                     onClick={() => this.props.signInWithGoogle()}
                 >
-                    <Google className="w-50 mr-3" />
+                    <Google className="mr-3" />
                     <span className="text-nowrap">Loghează-te cu Google</span>
                 </button>
 
