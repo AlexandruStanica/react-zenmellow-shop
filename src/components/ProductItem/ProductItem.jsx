@@ -26,7 +26,9 @@ function ProductItem(props) {
                 >
                     <img src={image} alt="productPhoto" className="mb-2" />
                     <p className="mb-1 text-center">{name}</p>
-                    <p className="text-center">{price + currency}</p>
+                    <p className="text-center">
+                        {price} {currency}
+                    </p>
                 </Link>
 
                 {!found ? (
