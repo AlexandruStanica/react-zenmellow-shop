@@ -11,12 +11,14 @@ function startLoading() {
         type: actionTypes.START_LOADING
     };
 }
+
 function updateUserData(payload) {
     return {
         type: actionTypes.UPDATE_USER_DATA,
         payload
     };
 }
+
 function updateUserError(payload) {
     return {
         type: actionTypes.UPDATE_USER_ERROR,
